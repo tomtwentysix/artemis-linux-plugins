@@ -1,0 +1,13 @@
+{
+  "Guid": "24fce30a-75db-4865-a08a-81acb94f4138",
+  "MinimumVersion": "1.2025.1222.3",
+  "Name": "Linux Lock Keys",
+  "Author": "SolarFlare Developments",
+  "Website": "https://github.com/tomtwentysix/artemis-linux-plugins",
+  "Repository": "https://github.com/tomtwentysix/artemis-linux-plugins",
+  "Icon": "KeyboardCaps",
+  "Description": "Caps, Num and Scroll Lock state from the keyboard LEDs.",
+  "Version": "1.0.0.0",
+  "Main": "Artemis.Plugins.Modules.LinuxLockKeys.dll",
+  "Platforms": "Linux"
+}

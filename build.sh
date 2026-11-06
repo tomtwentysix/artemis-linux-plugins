@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Builds two Artemis plugin zips for Linux:
+# Builds three Artemis plugin zips for Linux:
 #   dist/Performance-Linux.zip   - the official Performance module plus a Linux backend (CPU + RAM usage)
 #   dist/LinuxSensors.zip        - temperatures from /sys/class/hwmon (what lm-sensors reads)
+#   dist/LinuxLockKeys.zip       - Caps, Num and Scroll Lock state from the keyboard LEDs
 # Then import each zip in Artemis: Settings > Plugins > Import plugin.
 set -euo pipefail
 
@@ -32,6 +33,9 @@ cp "$HERE/performance/LinuxPerformanceService.cs" "$PERF/Services/Performance/Li
 echo "==> Adding the Linux Sensors module"
 cp -r "$HERE/sensors" "$MODULES/Artemis.Plugins.Modules.LinuxSensors"
 
+echo "==> Adding the Linux Lock Keys module"
+cp -r "$HERE/lockkeys" "$MODULES/Artemis.Plugins.Modules.LinuxLockKeys"
+
 mkdir -p "$DIST"
 package() {
     local project="$1" zipname="$2" out="$WORK/publish/$2"
@@ -42,6 +46,7 @@ package() {
 }
 package "$PERF/Artemis.Plugins.Modules.Performance.csproj" "Performance-Linux"
 package "$MODULES/Artemis.Plugins.Modules.LinuxSensors/Artemis.Plugins.Modules.LinuxSensors.csproj" "LinuxSensors"
+package "$MODULES/Artemis.Plugins.Modules.LinuxLockKeys/Artemis.Plugins.Modules.LinuxLockKeys.csproj" "LinuxLockKeys"
 
 echo
 echo "Done. Import these in Artemis (Settings > Plugins > Import plugin):"
