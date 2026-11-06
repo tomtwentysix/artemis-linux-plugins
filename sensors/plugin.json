@@ -1,0 +1,13 @@
+{
+  "Guid": "5aaead36-b211-4931-a196-a283d1676bc8",
+  "MinimumVersion": "1.2025.1222.3",
+  "Name": "Linux Sensors",
+  "Author": "SolarFlare Developments",
+  "Website": "https://github.com/tomtwentysix/artemis-linux-plugins",
+  "Repository": "https://github.com/tomtwentysix/artemis-linux-plugins",
+  "Icon": "Thermometer",
+  "Description": "Temperatures from the kernel's hwmon sensors (the same data lm-sensors shows).",
+  "Version": "1.0.0.0",
+  "Main": "Artemis.Plugins.Modules.LinuxSensors.dll",
+  "Platforms": "Linux"
+}
